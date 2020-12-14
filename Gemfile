@@ -15,6 +15,7 @@ path '.' do
 
     gem 'lita-doubler', path: 'lita-doubler'
     gem 'lita-weather', path: 'lita-weather'
+    gem 'lita-translator', path: 'lita-translator'
     gem 'lita-what', path: 'lita-what'
     gem 'lita-wiki', path: 'lita-wiki'
     gem 'lita-good', path: 'lita-good'

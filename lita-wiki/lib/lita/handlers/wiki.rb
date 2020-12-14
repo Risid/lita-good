@@ -11,7 +11,7 @@ module Lita
 
       def respond_with_info(response)
         n = response.match_data.captures.first
-
+	print(n)
         response.reply("Lita正在查找有关#{n}的信息")
         http_response = http.get(
             "https://zh.wikibooks.org/w/api.php?action=query&list=search&srsearch=#{URI::encode(n)}&utf8=&format=json"

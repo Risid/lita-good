@@ -1,11 +1,11 @@
 Gem::Specification.new do |spec|
-  spec.name          = "lita-good"
+  spec.name          = "lita-translator"
   spec.version       = "0.1.0"
-  spec.authors       = ["risid"]
-  spec.email         = ["risid@qq.com"]
-  spec.description   = "good"
-  spec.summary       = "good"
-  spec.homepage      = "http://localhost:8080/api.php"
+  spec.authors       = ["Xin Wang"]
+  spec.email         = ["hsimwong1202@gmail.com"]
+  spec.description   = "translate chinese to english"
+  spec.summary       = "translate chinese to english"
+  spec.homepage      = "https://github.com/HsimWong/"
   spec.license       = "MIT"
   spec.metadata      = { "lita_plugin_type" => "handler" }
 
@@ -14,15 +14,13 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "lita"
+  spec.add_runtime_dependency "lita", ">= 4.8"
 
-  spec.add_development_dependency "bundler"
+  spec.add_development_dependency "bundler", "> 1.3"
   spec.add_development_dependency "pry-byebug"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rack-test"
-  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "rspec", ">= 3.0.0"
   spec.add_development_dependency "simplecov"
   spec.add_development_dependency "coveralls"
-
-  spec.add_development_dependency "nokogiri"
 end

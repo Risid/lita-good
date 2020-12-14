@@ -6,12 +6,18 @@ PATH
   remote: lita-doubler
   specs:
     lita-doubler (0.1.0)
-      lita (>= 4.8)
+      lita
 
 PATH
   remote: lita-good
   specs:
     lita-good (0.1.0)
+      lita
+
+PATH
+  remote: lita-translator
+  specs:
+    lita-translator (0.1.0)
       lita (>= 4.8)
 
 PATH
@@ -37,8 +43,9 @@ GEM
   specs:
     cinch (2.3.4)
     concurrent-ruby (1.1.7)
-    faraday (1.0.1)
+    faraday (1.1.0)
       multipart-post (>= 1.2, < 3)
+      ruby2_keywords
     http_router (0.11.2)
       rack (>= 1.0.0)
       url_mount (~> 0.2.1)
@@ -66,29 +73,32 @@ GEM
     nio4r (2.5.4)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
-    puma (5.0.2)
+    puma (5.1.1)
       nio4r (~> 2.0)
     rack (2.2.3)
     rb-readline (0.5.5)
-    redis (4.2.2)
+    redis (4.2.5)
     redis-namespace (1.8.0)
       redis (>= 3.0.4)
+    ruby2_keywords (0.0.2)
     thor (1.0.1)
     url_mount (0.2.1)
       rack
 
 PLATFORMS
   ruby
+  x86_64-linux
 
 DEPENDENCIES
   lita
   lita-doubler!
   lita-good!
   lita-irc
+  lita-translator!
   lita-weather!
   lita-what!
   lita-wiki!
   nokogiri
 
 BUNDLED WITH
-   2.1.4
+   2.2.0
