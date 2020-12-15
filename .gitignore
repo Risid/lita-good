@@ -2,6 +2,7 @@
 *.gem
 *.rbc
 *.lock
+*.swp
 /.config
 /coverage/
 /InstalledFiles

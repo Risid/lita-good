@@ -5,7 +5,7 @@ module Lita
     class Translator < Handler
       # insert handler code here
       route(
-        /翻译(.*).*$/,
+        /^(翻译(?!是什么).*)/,
         :respond_with_translation,
         command: true,
         help:{'puma是什么意思' => '美洲狮'}
