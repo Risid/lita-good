@@ -29,8 +29,8 @@ describe Lita::Handlers::Good, lita_handler: true do
 
       it 'lita when asked to' do
         send_message 'Lita "lita"'
-        respond_data = '1. Lita translation：如果lita translation missing，可以通过设置临时的utf-8.us来解决。 https://wiki.risid.com/index.php/Lita%20translation'
-        expect(replies.last).to eq(respond_data)
+        respond_data = '1. Lita translation：'
+        expect(replies.last).to include(respond_data)
       end
     end
 
