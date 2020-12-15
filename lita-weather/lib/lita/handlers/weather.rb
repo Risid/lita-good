@@ -43,9 +43,9 @@ module Lita
       end
 
       def respond_with_weather(response)
+        n = response.match_data.captures.first
 
         response.reply("Lita正在找#{n}的天气情况")
-        n = response.match_data.captures.first
         response.reply query_weather(n)
       end
 
