@@ -2,23 +2,23 @@ require "spec_helper"
 
 describe Lita::Handlers::Doubler, lita_handler: true do
   let(:robot) { Lita::Robot.new(registry) }
-  subject {described_class.new(robot)}
+  subject { described_class.new(robot) }
 
   describe 'routing' do
     # allow extra whitespace
-    it { is_expected.to route('Lita double 2')}
-    it { is_expected.to route('Lita double     22')}
+    it { is_expected.to route('Lita double 2') }
+    it { is_expected.to route('Lita double     22') }
 
     # allow mixed casing
-    it { is_expected.to route('Lita doUble 4')}
+    it { is_expected.to route('Lita doUble 4') }
 
     # ignore numbers that don't look like integers
-    it { is_expected.to route('Lita double two')}
-    it { is_expected.to route('Lita double 1e4')}
+    it { is_expected.not_to route('Lita double two') }
+    it { is_expected.not_to route('Lita double 1e4') }
 
     describe "functionality" do
       describe ':double_number' do
-        let(:n){ rand(1..100)}
+        let(:n) { rand(1..100) }
 
         it 'returns double the input' do
           actual = subject.double_number n
