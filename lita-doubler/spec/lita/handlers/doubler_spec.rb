@@ -30,7 +30,7 @@ describe Lita::Handlers::Doubler, lita_handler: true do
 
       it 'doubles numbers when asked to' do
         send_message 'Lita double 2'
-        expect(replies.last).to eq('2 + 2 = 4')
+        expect(replies.last).to eq('2 加 2 等于 4')
       end
     end
 
