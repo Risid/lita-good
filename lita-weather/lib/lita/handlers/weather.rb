@@ -12,8 +12,7 @@ module Lita
           help: {'北京天气' => '打印出北京现在天气'}
       )
 
-      def respond_with_weather(response)
-        n = response.match_data.captures.first
+      def query_weather(n)
         http_response = http.get(
             "https://geoapi.heweather.net/v2/city/lookup?location=#{URI::encode(n)}&key=3abeb6248760475fbc0fa030ef61b59f"
         )
@@ -22,7 +21,6 @@ module Lita
         rep_code = data["code"]
 
         rep = data["location"]
-        response.reply("Lita正在找#{n}的天气情况")
         if rep_code == '200'
 
           http_response = http.get(
@@ -33,15 +31,22 @@ module Lita
           rep_code = data["code"]
           if rep_code == '200'
 
-            response.reply(print_now_weather(data['now'], n))
+            print_now_weather(data['now'], n)
           else
-            response.reply("您可能输错了城市，Lita没有找到#{n}这个城市的天气情况")
+            "您可能输错了城市，Lita没有找到#{n}这个城市的天气情况"
           end
         else
-          response.reply("您可能输错了城市，Lita没有找到#{n}这个城市")
+          "您可能输错了城市，Lita没有找到#{n}这个城市"
         end
 
 
+      end
+
+      def respond_with_weather(response)
+
+        response.reply("Lita正在找#{n}的天气情况")
+        n = response.match_data.captures.first
+        response.reply query_weather(n)
       end
 
       def print_now_weather(now, city)
